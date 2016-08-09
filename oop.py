@@ -55,3 +55,55 @@ print(wowObject.x)
 print(wowObject.square(5))
 print(Wow.x)
 print(Wow.square(wowObject,6))
+
+'''
+----------------------------------class & instance variables-------------------------------------
+# class variable shared by all instances
+# instance variable unique to each instance
+'''
+
+print('---------------------example4----------------------------')
+class Dog:
+    
+    kind = 'canine'
+    def __init__(self, name):
+        self.name = name
+
+d = Dog('fido')
+e = Dog('buddy')
+print(d.kind)
+print(e.kind)
+print(d.name)
+print(e.name)
+
+'''
+---------------------------------------------Inheritance-----------------------------------------
+'''
+
+print('---------------------example5----------------------------')
+class Vehicle:
+    info = 'this is a vehicle'
+    def __init__(self):
+        self.type = '4 wheeler'
+    def setName(self):
+        self.name = 'test'
+
+class Car(Vehicle):
+    def setName(self):
+        self.name = 'car'
+
+print(':::::::: base class :::::::')
+vehicleObj = Vehicle()
+print(Vehicle.info)
+print(vehicleObj.info)
+print(vehicleObj.type)
+vehicleObj.setName()
+print(vehicleObj.name)
+
+print(':::::::: sub class :::::::')
+toyota = Car()
+print(Car.info)
+print(toyota.info)
+print(toyota.type)
+toyota.setName()
+print(toyota.name)
