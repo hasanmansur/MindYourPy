@@ -33,3 +33,20 @@ rev = Reverse('hello')
 for i in rev:
     print(i)
 
+
+'''
+--------------------------- Generator ---------------------------------
+# Generators are a simple and powerful tool for creating iterators.
+# They are written like regular functions but use the yield statement whenever they want to return data. 
+# Each time next() is called on it, the generator resumes where it left off (it remembers all the data values and which statement was last 
+  executed).
+# What makes generators so compact is that the __iter__() and __next__() methods are created automatically.
+'''
+print('-------------------example3-------------------')
+def reverse(data):
+    for i in range(len(data)-1, -1, -1):
+            print('sending data in %dth position' % i)
+            yield data[i]
+
+for j in reverse('hello'):
+    print(j)
