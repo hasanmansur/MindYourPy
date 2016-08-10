@@ -107,3 +107,21 @@ print(toyota.info)
 print(toyota.type)
 toyota.setName()
 print(toyota.name)
+
+print('---------------------example6----------------------------')
+
+class Base1:
+    def __init__(self):
+        self.x = 99;
+
+class Base2:
+    def setY(self):
+        self.y = 100
+
+class Derived(Base1, Base2):
+    pass
+
+foo = Derived()
+foo.setY()
+print(foo.x)
+print(foo.y)
