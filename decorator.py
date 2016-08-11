@@ -1,5 +1,6 @@
 '''
-Essentially, decorators work as wrappers, modifying the behavior of the code before and after a target function execution, without the need to modify the function itself, augmenting the original functionality, thus decorating it.
+Essentially, decorators work as wrappers, modifying the behavior of the code before and after a target 
+function execution, without the need to modify the function itself, augmenting the original functionality, thus decorating it.
 '''
 
 print('-----------------------------------Composition of Decorators------------------------------------')
@@ -35,3 +36,26 @@ def say_bye(name):
     return 'bye ' + name
 
 print(say_bye('hasan'))
+
+
+'''
+Decorators expect to receive a function as an argument, that is why we will have to build a function that 
+takes those extra arguments and generate our decorator on the fly. In the example above tags, is our decorator generator.
+'''
+
+print('-------------------------------Passing Arguments to decorator------------------------------------')
+def tags(tag):
+    def tags_decorator(func):
+        def func_wrapper(name):
+            return '<{0}>{1}</{0}>'.format(tag, func(name))
+        return func_wrapper
+    return tags_decorator
+
+
+@tags('div')
+@tags('p')
+@tags('b')
+def hello(name):
+    return 'hello ' + name
+
+print(hello('hasan'))
