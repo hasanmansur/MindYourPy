@@ -1,4 +1,4 @@
-# mindYourPy
+# MindYourPy
 
 This a collection of simple code snippets regarding some basic concepts of Python.
 
